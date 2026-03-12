@@ -17,6 +17,10 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->enum('role', ['guru','siswa', 'admin'])->default('siswa');
+            $table->unsignedBigInteger('kelas_id')->nullable();
+
+            $table->foreign('kelas_id')->references('id')->on('kelas')->onDelete('set null');
             $table->rememberToken();
             $table->timestamps();
         });

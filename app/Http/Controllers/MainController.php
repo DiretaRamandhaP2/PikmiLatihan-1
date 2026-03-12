@@ -12,4 +12,11 @@ class MainController extends Controller
     {
         return view('pages.admin.dashboard');
     }
+
+    public function dashboardGuru()
+    {
+        return view('pages.guru.dashboard');
+    }
+
+
 }
